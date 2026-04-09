@@ -1,0 +1,417 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate Fletcher | Integrated Studies Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfbf9; /* Off-white / Paper */
+            --text-main: #1a1a1a; /* Soft charcoal */
+            --text-muted: #666666;
+            --accent: #4a5568; /* Slate Blue-Grey */
+            --border: #e2e8f0;
+            --section-padding: 100px 5%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(252, 251, 249, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Layout Structures --- */
+        section {
+            padding: var(--section-padding);
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        /* --- Hero / Home --- */
+        #home {
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-statement {
+            font-size: clamp(1.1rem, 3vw, 1.8rem);
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--accent);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* --- About / Framework --- */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .manifesto-box {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .manifesto-box p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Pillars --- */
+        .pillar-header {
+            border-bottom: 1px solid var(--text-main);
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .artifact-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .artifact-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #f0f0f0;
+            padding: 4px 8px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .artifact-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .artifact-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--text-main);
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: #fff;
+        }
+
+        /* --- Synthesis / Capstone --- */
+        .synthesis-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .synthesis-featured {
+            background: #fff;
+            padding: 4rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .pdf-placeholder {
+            width: 100%;
+            height: 500px;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            border: 1px dashed #ccc;
+        }
+
+        /* --- Vault --- */
+        .vault-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .process-block {
+            padding: 2rem;
+            background: #fdfdfd;
+            border: 1px solid var(--border);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .framework-grid, .vault-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simplification for mobile nav */
+            }
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="window.scrollTo(0,0)">Kate Fletcher</div>
+        <ul>
+            <li><a href="#about">Framework</a></li>
+            <li><a href="#pillars">The Pillars</a></li>
+            <li><a href="#synthesis">The Synthesis</a></li>
+            <li><a href="#vault">The Vault</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME / PERSPECTIVE -->
+    <section id="home">
+        <span class="section-label">Perspective</span>
+        <h1 class="hero-title">Behavioral Insights & <br><i>Rhetorical Strategy.</i></h1>
+        <p class="hero-statement">
+            [Insert Mission Statement Here: A synthesis of psychological research and communication craft to address the breakdown of expert trust.]
+        </p>
+    </section>
+
+    <!-- ABOUT / FRAMEWORK -->
+    <section id="about">
+        <span class="section-label">The Framework</span>
+        <div class="framework-grid">
+            <div class="serif" style="font-size: 2.5rem; line-height: 1.2;">
+                Bridging the gap between <i>how we think</i> and <i>how we speak.</i>
+            </div>
+            <div class="manifesto-box">
+                <p><strong>[Integrated Narrative Summary]</strong></p>
+                <p>This section will host your professional manifesto. It connects your minors—Psychology and Writing, Rhetoric, and Publication—into a singular academic identity.</p>
+                <p>Focus on your trajectory toward law school or professional communication, emphasizing the "why" behind your interdisciplinary approach.</p>
+                <br>
+                <a href="#" class="btn">View Professional CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PILLARS -->
+    <section id="pillars">
+        <span class="section-label">The Pillars</span>
+        
+        <div class="pillar-header">
+            <h2 class="serif">Core Competencies</h2>
+        </div>
+
+        <div class="artifact-grid">
+            <!-- Artifact 1: Psychology -->
+            <div class="artifact-card">
+                <div>
+                    <span class="artifact-tag">Psychology / Systems Thinking</span>
+                    <h3 class="artifact-title">Systems Thinking Research Synthesis</h3>
+                    <p class="artifact-desc">[Insert 2-3 sentence description: Focus on expert trust, technical data, and cognitive biases.]</p>
+                </div>
+                <a href="#" class="btn">View Research Paper</a>
+            </div>
+
+            <!-- Artifact 2: Feature Writing -->
+            <div class="artifact-card">
+                <div>
+                    <span class="artifact-tag">Writing / Narrative</span>
+                    <h3 class="artifact-title">Feature Article: Prader-Willi Syndrome</h3>
+                    <p class="artifact-desc">[Insert 2-3 sentence description: Focus on translating medical complexity into human-interest narrative.]</p>
+                </div>
+                <a href="#" class="btn">Read Feature</a>
+            </div>
+
+            <!-- Artifact 3: UX/Technical -->
+            <div class="artifact-card">
+                <div>
+                    <span class="artifact-tag">UX / Design Strategy</span>
+                    <h3 class="artifact-title">Craigslist Usability Testing</h3>
+                    <p class="artifact-desc">[Insert 2-3 sentence description: Focus on data-driven methodology and user "friction" points.]</p>
+                </div>
+                <a href="#" class="btn">View UX Case Study</a>
+            </div>
+
+            <!-- Artifact 4: Literary Analysis -->
+            <div class="artifact-card">
+                <div>
+                    <span class="artifact-tag">Rhetoric / Analysis</span>
+                    <h3 class="artifact-title">“Fine Line” Rhetorical Essay</h3>
+                    <p class="artifact-desc">[Insert 2-3 sentence description: Focus on textual analysis and navigating connection vs. conflict.]</p>
+                </div>
+                <a href="#" class="btn">View Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SYNTHESIS -->
+    <section id="synthesis">
+        <span class="section-label">The Synthesis</span>
+        <div class="synthesis-layout">
+            <h2 class="serif" style="font-size: 3rem;">Capstone: Who Do We Trust?</h2>
+            <div class="synthesis-featured">
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                    [Insert Capstone Abstract: A summary of your final synthesis research regarding expert disagreement and democracy.]
+                </p>
+                <div class="pdf-placeholder">
+                    [Embedded PDF Preview: Senior Synthesis Seminar Paper]
+                </div>
+                <a href="#" class="btn">Download Full Thesis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE VAULT -->
+    <section id="vault">
+        <span class="section-label">The Vault</span>
+        <h2 class="serif" style="margin-bottom: 2rem;">Iterative Growth & Exploration</h2>
+        
+        <div class="vault-grid">
+            <div class="process-block">
+                <h3 class="serif">The Revision Lab</h3>
+                <p class="artifact-desc" style="margin-top: 1rem;">
+                    [Insert Leaflet Design Revision Notes: Showcase the growth from early prototype to final UX-optimized program leaflet.]
+                </p>
+                <div style="background: #eee; height: 200px; margin-top: 1rem; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; color: #999;">
+                    [Image Comparison Block: Prototype vs. Revised]
+                </div>
+            </div>
+            
+            <div class="process-block">
+                <h3 class="serif">Free Choice Archive</h3>
+                <p class="artifact-desc" style="margin-top: 1rem;">
+                    [Insert descriptions of auxiliary work, creative projects, or additional scholarly explorations.]
+                </p>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li style="border-bottom: 1px solid var(--border); padding: 10px 0;">+ Additional Project One</li>
+                    <li style="border-bottom: 1px solid var(--border); padding: 10px 0;">+ Additional Project Two</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 KATE FLETCHER — ACADEMIC E-PORTFOLIO</p>
+        <p style="margin-top: 10px;">INTEGRATED STUDIES | PSYCHOLOGY | WRITING, RHETORIC, & PUBLICATION</p>
+    </footer>
+
+</body>
+</html>
+
+```

@@ -153,13 +153,10 @@
       padding-bottom: 72px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 42px;
-      align-items: center;
-    }
-
+ .about-grid {
+  grid-template-columns: 260px 1fr;
+}
+      
     .about-photo-wrap {
       display: flex;
       flex-direction: column;
@@ -167,13 +164,14 @@
       gap: 12px;
     }
 
-.about-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
+    .about-photo {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
     .about-copy h2,
     .section-heading {
       font-size: clamp(1.9rem, 4vw, 3rem);

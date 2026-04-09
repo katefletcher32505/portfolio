@@ -60,7 +60,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(252, 251, 249, 0.9);
+    background: rgba(252, 251, 249, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
@@ -115,6 +115,24 @@ section {
     padding-bottom: 100px;
 }
 
+.hero-image {
+    width: 100%;
+    max-width: 860px;
+    height: 280px;
+    margin: 0 auto 42px;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(rgba(252,251,249,0.15), rgba(252,251,249,0.15)),
+        linear-gradient(135deg, #dfe7ee 0%, #eef1f4 40%, #d9dde3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    box-shadow: var(--shadow);
+}
+
 .hero-title {
     font-size: clamp(3rem, 8vw, 5.8rem);
     line-height: 1.02;
@@ -130,6 +148,53 @@ section {
     font-style: italic;
     font-weight: 300;
     line-height: 1.6;
+}
+
+#about-me {
+    padding-top: 40px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.about-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(rgba(252,251,249,0.10), rgba(252,251,249,0.10)),
+        linear-gradient(180deg, #d7dde4 0%, #edf0f3 100%);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 20px;
+}
+
+.about-copy h2,
+.section-heading {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 18px;
+}
+
+.about-copy p,
+.framework-copy p {
+    margin-bottom: 1.2rem;
+    font-size: 1.03rem;
+    max-width: 760px;
+}
+
+.about-copy strong,
+.framework-copy strong {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-size: 1.02rem;
 }
 
 #about {
@@ -152,21 +217,6 @@ section {
 .framework-copy {
     font-size: 1.04rem;
     max-width: 680px;
-}
-
-.framework-copy p {
-    margin-bottom: 1.25rem;
-}
-
-.framework-copy strong {
-    display: inline-block;
-    margin-bottom: 0.4rem;
-    font-size: 1.02rem;
-}
-
-.section-heading {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    margin-bottom: 18px;
 }
 
 .section-intro {
@@ -284,6 +334,7 @@ footer {
 }
 
 @media (max-width: 980px) {
+    .about-grid,
     .framework-grid,
     .pillars-grid,
     .vault-grid {
@@ -300,6 +351,10 @@ footer {
 
     .artifact-card {
         min-height: auto;
+    }
+
+    .about-photo {
+        max-width: 320px;
     }
 }
 
@@ -325,6 +380,10 @@ footer {
     .artifact-card {
         padding: 22px;
     }
+
+    .hero-image {
+        height: 220px;
+    }
 }
 </style>
 </head>
@@ -332,8 +391,9 @@ footer {
 <body>
 
 <nav>
-    <div class="logo">Kate Fletcher</div>
+    <div class="logo"><a href="#about-me">Kate Fletcher</a></div>
     <ul>
+        <li><a href="#about-me">About</a></li>
         <li><a href="#about">Framework</a></li>
         <li><a href="#pillars">Pillars</a></li>
         <li><a href="#synthesis">Synthesis</a></li>
@@ -342,11 +402,40 @@ footer {
 </nav>
 
 <section id="home">
+    <div class="hero-image">[Hero image placeholder — replace with photo, editorial banner, or visual texture]</div>
     <span class="section-kicker">Perspective</span>
     <h1 class="hero-title">Behavioral Insights &<br><i>Rhetorical Strategy.</i></h1>
     <p class="hero-statement">
         I study how people think, what they believe, and why trust breaks—using psychology and rhetoric to make sense of systems that shape perception, behavior, and power.
     </p>
+</section>
+
+<section id="about-me">
+    <span class="section-kicker">About</span>
+    <div class="about-grid">
+        <div class="about-photo">[Photo placeholder — replace with your portrait or a styled professional image]</div>
+
+        <div class="about-copy">
+            <h2>About Me</h2>
+            <p><strong>College of Charleston · Integrated Studies</strong></p>
+
+            <p>
+                I am a student at the College of Charleston studying Integrated Studies with concentrations in psychology and writing, rhetoric, and publication. My academic work sits at the intersection of human behavior, communication, systems, and public trust.
+            </p>
+
+            <p>
+                I chose Integrated Studies because I did not want to separate the things I was most interested in understanding. Psychology gave me a way to think about belief, perception, cognition, and behavior, while writing and rhetoric gave me the tools to examine how those ideas are communicated, interpreted, and challenged in public life.
+            </p>
+
+            <p>
+                Together, those fields let me approach questions that are both analytical and human: why people trust what they trust, how institutions gain or lose credibility, and how language shapes the way we make meaning in moments of uncertainty.
+            </p>
+
+            <p>
+                This portfolio reflects the overlap between those interests through research, rhetorical analysis, narrative writing, and user-centered communication work. It is designed not only as an academic archive, but as a professional portfolio for future internships, law school, and other opportunities grounded in research, writing, analysis, and advocacy.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section id="about">

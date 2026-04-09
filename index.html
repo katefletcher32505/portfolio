@@ -1,113 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kate Fletcher | Integrated Studies Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #fcfbf9;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --accent: #4a5568;
-            --border: #e2e8f0;
-            --section-padding: 100px 5%;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<title>Kate Fletcher | Integrated Studies Portfolio</title>
 
-        html { scroll-behavior: smooth; }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
+<style>
+:root {
+    --bg-color: #fcfbf9;
+    --text-main: #1a1a1a;
+    --text-muted: #666;
+    --accent: #4a5568;
+    --border: #e2e8f0;
+}
 
-        h1, h2, h3, .serif {
-            font-family: 'Playfair Display', serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            background: rgba(252, 251, 249, 0.9);
-            border-bottom: 1px solid var(--border);
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
 
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(252,251,249,0.9);
+    border-bottom: 1px solid var(--border);
+}
 
-        section {
-            padding: var(--section-padding);
-            max-width: 1400px;
-            margin: 0 auto;
-            min-height: 80vh;
-        }
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 
-        #home {
-            min-height: 100vh;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
 
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-        }
+section {
+    padding: 120px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .hero-statement {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 2rem auto;
-            color: var(--accent);
-            font-style: italic;
-        }
-    </style>
+#home {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.hero-statement {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.artifact-card {
+    border: 1px solid var(--border);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div>Kate Fletcher</div>
-    <ul>
-        <li><a href="#about">Framework</a></li>
-        <li><a href="#pillars">The Pillars</a></li>
-        <li><a href="#synthesis">The Synthesis</a></li>
-        <li><a href="#vault">The Vault</a></li>
-    </ul>
+<div>Kate Fletcher</div>
+<ul>
+<li><a href="#about">Framework</a></li>
+<li><a href="#pillars">Pillars</a></li>
+<li><a href="#synthesis">Synthesis</a></li>
+<li><a href="#vault">Vault</a></li>
+</ul>
 </nav>
 
+<!-- HOME -->
 <section id="home">
-    <h1 class="hero-title">
-        Behavioral Insights & <br><i>Rhetorical Strategy.</i>
-    </h1>
+<h1 class="hero-title">
+Behavioral Insights & <br><i>Rhetorical Strategy.</i>
+</h1>
 
-    <!-- ✅ THIS IS THE ONLY PART WE CHANGED -->
-    <p class="hero-statement">
-        I study how people think, what they believe, and why trust breaks—using psychology and rhetoric to make sense of systems that shape perception, behavior, and power.
-    </p>
+<p class="hero-statement">
+I study how people think, what they believe, and why trust breaks—using psychology and rhetoric to make sense of systems that shape perception, behavior, and power.
+</p>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="about">
+
+<h2>Framework</h2>
+
+<div class="framework-grid">
+
+<div style="font-size: 2rem;">
+Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
+</div>
+
+<div>
+
+<p><strong>Integrated Perspective</strong></p>
+
+<p>
+I don’t approach psychology and communication as separate fields—I see them as part of the same system. How people think, what they believe, and how they communicate are constantly shaping each other.
+</p>
+
+<p>
+My work focuses on the space where those systems start to break down—especially around trust. Whether in media, science, or everyday decision-making, I’m interested in what happens when people stop believing institutions, experts, or even each other.
+</p>
+
+<p>
+By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed.
+</p>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- PILLARS -->
+<section id="pillars">
+
+<h2>The Pillars</h2>
+
+<div class="artifact-card">
+<h3>Systems Thinking Research</h3>
+<p>
+Explores how trust in expertise is shaped by cognitive bias, media systems, and public perception.
+</p>
+</div>
+
+<div class="artifact-card">
+<h3>Feature Writing</h3>
+<p>
+Translates complex medical and psychological realities into human-centered narratives.
+</p>
+</div>
+
+<div class="artifact-card">
+<h3>UX Research</h3>
+<p>
+Analyzes user behavior and friction points through structured usability testing.
+</p>
+</div>
+
+<div class="artifact-card">
+<h3>Rhetorical Analysis</h3>
+<p>
+Examines how language shapes meaning, conflict, and connection.
+</p>
+</div>
+
+</section>
+
+<!-- SYNTHESIS -->
+<section id="synthesis">
+
+<h2>Capstone: Who Do We Trust?</h2>
+
+<p>
+A research-driven project exploring how expert disagreement, media systems, and public perception shape trust in modern society.
+</p>
+
+</section>
+
+<!-- VAULT -->
+<section id="vault">
+
+<h2>The Vault</h2>
+
+<p>
+A collection of iterative work, revisions, and exploratory projects that reflect growth over time.
+</p>
+
+</section>
+
+<footer>
+<p>© Kate Fletcher</p>
+</footer>
 
 </body>
 </html>

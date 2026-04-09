@@ -78,12 +78,13 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     list-style: none;
+    align-items: center;
 }
 
 nav a {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transition: opacity 0.2s ease;
@@ -91,6 +92,12 @@ nav a {
 
 nav a:hover {
     opacity: 0.65;
+}
+
+.nav-linkedin {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
 }
 
 section {
@@ -238,7 +245,7 @@ section {
     border: 1px solid var(--border);
     padding: 22px;
     box-shadow: var(--shadow);
-    min-height: 220px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
 }
@@ -263,6 +270,30 @@ section {
     padding-top: 14px;
     font-size: 0.82rem;
     color: var(--text-muted);
+}
+
+.card-actions {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--text-main);
+    color: #fff;
+    border-color: var(--text-main);
 }
 
 #synthesis,
@@ -336,15 +367,19 @@ footer {
     }
 
     nav ul {
-        gap: 12px;
+        gap: 10px;
     }
 
     nav a {
-        font-size: 0.62rem;
+        font-size: 0.6rem;
     }
 
     .logo {
         font-size: 0.88rem;
+    }
+
+    .nav-linkedin {
+        padding: 6px 8px;
     }
 
     section {
@@ -412,6 +447,7 @@ footer {
         <li><a href="#pillars">Pillars</a></li>
         <li><a href="#synthesis">Synthesis</a></li>
         <li><a href="#vault">Vault</a></li>
+        <li><a class="nav-linkedin" href="https://www.linkedin.com/in/your-link-here" target="_blank">LinkedIn</a></li>
     </ul>
 </nav>
 
@@ -474,7 +510,7 @@ footer {
             </p>
 
             <p>
-                By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, and applied communication work.
+                By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, design, and applied communication work.
             </p>
         </div>
     </div>
@@ -484,10 +520,11 @@ footer {
     <span class="section-kicker">The Pillars</span>
     <h2 class="section-heading">Core Areas of Work</h2>
     <p class="section-intro">
-        These projects reflect the main through-lines of my academic work: systems thinking, research, narrative translation, rhetorical analysis, and user-centered communication.
+        These projects reflect the main through-lines of my academic work: systems thinking, research, narrative translation, rhetorical analysis, design, and user-centered communication.
     </p>
 
     <div class="pillars-grid">
+
         <div class="artifact-card">
             <span class="card-label">Psychology · Systems Thinking</span>
             <h3>Systems Thinking Research</h3>
@@ -495,6 +532,9 @@ footer {
                 Investigates how public trust is shaped by expertise, media systems, and cognitive bias. This work reflects my interest in how people form beliefs and how institutional credibility is built, challenged, or lost.
             </p>
             <div class="artifact-note">Senior synthesis research / trust, expertise, communication</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Senior%20Synthesis%20Seminar%E2%80%94Kate%20Fletcher%20%28Final%20Paper%20Intro%29.pdf" target="_blank">View Paper</a>
+            </div>
         </div>
 
         <div class="artifact-card">
@@ -504,25 +544,61 @@ footer {
                 Translates medical and psychological complexity into human-centered narrative. This work demonstrates my ability to balance research, lived experience, and accessible storytelling for broader audiences.
             </p>
             <div class="artifact-note">Longform feature writing / research translation / public-facing prose</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Feature%20Article.pdf" target="_blank">Read Feature</a>
+            </div>
+        </div>
+
+        <div class="artifact-card">
+            <span class="card-label">Creative Writing · Fiction</span>
+            <h3>Fiction Portfolio</h3>
+            <p>
+                A collected portfolio of fiction writing, revision work, and reflective practice. This piece shows my engagement with craft, emotional structure, revision, and narrative experimentation.
+            </p>
+            <div class="artifact-note">Collected works / revision log / reflective letter / The Hum</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/FinalPortfolio__KateFletcher.pdf" target="_blank">Open Portfolio</a>
+            </div>
+        </div>
+
+        <div class="artifact-card">
+            <span class="card-label">Design · Rhetoric</span>
+            <h3>WRP Leaflet</h3>
+            <p>
+                A public-facing print project focused on hierarchy, audience, flow, and outcomes messaging. This work reflects my interest in rhetoric not just as analysis, but as design and usability in practice.
+            </p>
+            <div class="artifact-note">Program leaflet / design strategy / revision-based communication</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/WRP%20Leaflet%20%28Kate%20Fletcher%29.pdf" target="_blank">View Leaflet</a>
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Untitled%20presentation.pptx" target="_blank">View Rationale</a>
+            </div>
         </div>
 
         <div class="artifact-card">
             <span class="card-label">UX · Applied Research</span>
             <h3>UX Research</h3>
             <p>
-                Applies behavioral observation and usability testing to identify friction points in digital environments. This work highlights my attention to user perception, interface logic, and evidence-based communication design.
+                Applies usability testing and behavioral observation to identify friction points in digital environments. This work highlights my attention to user perception, trust signals, and evidence-based communication design.
             </p>
-            <div class="artifact-note">Usability testing / audience behavior / design strategy</div>
+            <div class="artifact-note">Craigslist usability case study / navigation / trust / design friction</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Usability%20Test%20Notes.pdf" target="_blank">View Notes</a>
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Usability%20Testing%20Presentation%20for%20Craigslist.pptx" target="_blank">View Presentation</a>
+            </div>
         </div>
 
         <div class="artifact-card">
             <span class="card-label">Rhetoric · Analysis</span>
-            <h3>Rhetorical Analysis</h3>
+            <h3>Fine Line Essay</h3>
             <p>
-                Examines how language shapes meaning, conflict, and connection. This work reflects my interest in the ways interpretation is constructed across culture, media, and personal experience.
+                Explores how language, emotion, and lived experience interact in cultural analysis. This essay reflects my interest in interpretation, audience, and the rhetorical texture of personal and public meaning.
             </p>
-            <div class="artifact-note">Close reading / media analysis / language and interpretation</div>
+            <div class="artifact-note">Music and culture / rhetorical interpretation / personal-critical analysis</div>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Fine%20Line%20Essay.pdf" target="_blank">Read Essay</a>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -540,8 +616,11 @@ footer {
                 This capstone asks how trust in expertise is built, destabilized, and rhetorically negotiated—especially in scientific and public-facing contexts. Drawing from psychology, science communication, and rhetorical analysis, the project explores why factual accuracy alone is often not enough to sustain public trust.
             </p>
             <p class="muted">
-                Final paper and supporting materials can be embedded or linked here as the project develops.
+                This is the current working version of the paper and will be updated as the final project develops.
             </p>
+            <div class="card-actions">
+                <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Senior%20Synthesis%20Seminar%E2%80%94Kate%20Fletcher%20%28Final%20Paper%20Intro%29.pdf" target="_blank">Open Capstone PDF</a>
+            </div>
         </div>
     </div>
 </section>
@@ -551,21 +630,44 @@ footer {
     <div class="vault-wrap">
         <h2 class="section-heading">Growth, Revision, and Additional Work</h2>
         <p class="section-intro">
-            This section holds projects that demonstrate development over time—especially revision, experimentation, and work that expands beyond a single format or discipline.
+            This section holds projects that show breadth, experimentation, and the larger shape of my academic interests beyond the portfolio’s main spine.
         </p>
 
         <div class="vault-grid">
             <div class="vault-card">
-                <h3>The Revision Lab</h3>
+                <h3>Music Composition Essay</h3>
                 <p>
-                    A space for draft-to-final comparisons, revision-based projects, and work that shows how my thinking has sharpened through rewriting, restructuring, and critical feedback.
+                    A personal-critical analysis of Tchaikovsky’s “Pathétique” as a reflection of personal and societal struggle.
                 </p>
+                <div class="card-actions">
+                    <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Kate%20Fletcher%20Music%20Composition%20Essay.pdf" target="_blank">Read Essay</a>
+                </div>
             </div>
 
             <div class="vault-card">
-                <h3>Free Choice Archive</h3>
+                <h3>The Walking Dead Essay</h3>
                 <p>
-                    A place for additional essays, creative work, media analysis, or interdisciplinary projects that contribute to the broader shape of my academic and professional interests.
+                    A longform reflective analysis connecting family, survival, morality, and media narrative.
+                </p>
+                <div class="card-actions">
+                    <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/the%20walking%20dead%20essay.docx" target="_blank">Open Document</a>
+                </div>
+            </div>
+
+            <div class="vault-card">
+                <h3>Fine Line Essay</h3>
+                <p>
+                    A cultural-rhetorical exploration of Harry Styles’ “Fine Line” through emotion, conflict, and lived experience.
+                </p>
+                <div class="card-actions">
+                    <a class="btn" href="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/Fine%20Line%20Essay.pdf" target="_blank">Read Essay</a>
+                </div>
+            </div>
+
+            <div class="vault-card">
+                <h3>Extended Archive</h3>
+                <p>
+                    This space can continue to grow with future essays, media analysis, additional design work, and revised versions of current projects.
                 </p>
             </div>
         </div>

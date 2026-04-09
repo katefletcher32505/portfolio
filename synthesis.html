@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capstone | Kate Fletcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #fcfbf9;
+      --surface: #ffffff;
+      --text-main: #161616;
+      --text-muted: #5f6672;
+      --accent: #4a5568;
+      --border: #e3e8ef;
+      --max-width: 900px;
+      --shadow: 0 10px 24px rgba(20, 20, 20, 0.04);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, .serif {
+      font-family: "Playfair Display", serif;
+      letter-spacing: -0.02em;
+    }
+
+    nav {
+      padding: 18px 5%;
+      border-bottom: 1px solid var(--border);
+      background: rgba(252, 251, 249, 0.92);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .back-link {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 72px 6% 88px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.3rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .card p + p {
+      margin-top: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--text-main);
+      color: #fff;
+      border-color: var(--text-main);
+    }
+
+    .note {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Kate Fletcher</a>
+      <a class="back-link" href="index.html#synthesis">Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <main>
+    <span class="kicker">Capstone Project</span>
+    <h1>Who Do We Trust?</h1>
+    <p class="subtitle">
+      A research project examining how non-experts evaluate expert disagreement, how trust is built or destabilized, and what obligations experts have when communicating uncertainty to the public.
+    </p>
+
+    <div class="card">
+      <h2>Project Overview</h2>
+      <p>
+        This project asks a question that feels increasingly urgent: when experts disagree, how do ordinary people decide whom to trust? Rather than treating trust as something automatic, the paper examines how credibility is shaped through communication, framing, uncertainty, and public perception.
+      </p>
+      <p>
+        Drawing from psychology, rhetoric, and science communication, the project focuses on the gap between technical expertise and public understanding. It is especially interested in what happens when accurate information alone is not enough to persuade, reassure, or build confidence.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Why It Matters</h2>
+      <p>
+        At the center of the paper is the idea that expert communication is never purely neutral. The way uncertainty is explained, the way disagreement is framed, and the way audiences interpret competing claims all affect whether expertise is trusted or rejected.
+      </p>
+      <p>
+        This capstone reflects the larger focus of my portfolio: the intersection of human behavior, communication, and systems-level trust.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Current Draft</h2>
+      <p class="note">
+        This is the current working version of the project and will be updated as the final paper develops.
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/katefletcher32505/portfolio/blob/main/Senior%20Synthesis%20Seminar%E2%80%94Kate%20Fletcher%20%28Final%20Paper%20Intro%29.pdf?raw=true" target="_blank" rel="noopener noreferrer">Open Current PDF</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

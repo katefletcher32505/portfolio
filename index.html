@@ -232,13 +232,50 @@
       padding-bottom: 84px;
     }
 
-    .framework-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 56px;
-      align-items: start;
-    }
+<section id="about">
+  <span class="section-kicker">Framework</span>
 
+  <div class="framework-grid">
+    
+    <div class="framework-left">
+      <div class="framework-lead serif">
+        Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
+      </div>
+
+      <img
+        class="framework-image"
+        src="framework-graphic.jpeg"
+        alt="Communication and layered dialogue graphic"
+      />
+    </div>
+
+    <div class="framework-copy">
+      <p><strong>Integrated Perspective</strong></p>
+
+      <p>
+        I do not approach psychology and communication as separate fields. I see them as part of the same system: how people think, what they believe, and how they communicate are constantly shaping each other.
+      </p>
+
+      <p>
+        My work focuses on the point where those systems begin to break down—especially around trust. Whether in media, science, public discourse, or everyday decision-making, I am interested in what happens when people stop believing institutions, experts, or even each other.
+      </p>
+
+      <p>
+        By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, design, and applied communication work.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+.framework-image {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
     .framework-lead {
       font-size: clamp(2rem, 4.2vw, 3.35rem);
       line-height: 1.18;
@@ -545,7 +582,11 @@
       <div class="framework-lead serif">
         Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
       </div>
-
+      <img
+  class="framework-image"
+  src="framework-graphic.jpeg"
+  alt="Communication and layered dialogue graphic"
+/>
       <div class="framework-copy">
         <p><strong>Integrated Perspective</strong></p>
 

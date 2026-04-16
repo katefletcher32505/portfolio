@@ -7,846 +7,441 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg-color: #fcfbf9;
-      --surface: #ffffff;
-      --surface-soft: #f8f5f1;
-      --text-main: #181818;
-      --text-muted: #606875;
-      --accent: #4a5568;
-      --border: #e3e8ef;
-      --max-width: 1220px;
-      --shadow: 0 14px 30px rgba(20, 20, 20, 0.045);
-      --radius: 20px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.72;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    h1, h2, h3, .serif {
-      font-family: "Playfair Display", serif;
-      letter-spacing: -0.02em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 16px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(252, 251, 249, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: opacity 0.2s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.65;
-    }
-
-    .nav-linkedin {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 999px;
-    }
-
-    section {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 88px 5%;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 290px;
-      background-image: url("https://raw.githubusercontent.com/katefletcher32505/portfolio/main/IMG_4955.webp");
-      background-size: cover;
-      background-position: center;
-      border-bottom: 1px solid var(--border);
-      margin-top: 58px;
-    }
-
-    #home {
-      text-align: center;
-      padding-top: 66px;
-      padding-bottom: 82px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.9rem, 7vw, 5.5rem);
-      line-height: 1.01;
-      max-width: 940px;
-      margin: 0 auto;
-    }
-
-    .hero-statement {
-      max-width: 860px;
-      margin: 24px auto 0;
-      font-size: clamp(1.06rem, 2.2vw, 1.48rem);
-      color: var(--accent);
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.78;
-    }
-
-    .hero-subcopy {
-      max-width: 760px;
-      margin: 26px auto 0;
-      color: var(--text-muted);
-      font-size: 0.98rem;
-    }
-
-    #about-me {
-      padding-top: 42px;
-      padding-bottom: 86px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
-      gap: 64px;
-      align-items: start;
-    }
-
-    .about-photo-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      position: sticky;
-      top: 96px;
-    }
-
-  .about-photo {
-  width: 100%;
-  max-width: 300px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-    }
-
-    .about-caption {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-  .about-copy p {
-  margin-bottom: 1.05rem;
-  max-width: 760px;
-  font-size: 0.98rem;
-  line-height: 1.75;
-}
-    }
-
-    .about-meta {
-      margin-bottom: 20px;
-      color: var(--text-muted);
-    }
-
-    .about-copy p,
-    .framework-copy p,
-    .feature-block p,
-    .vault-card p,
-    .artifact-card p,
-    .link-card p {
-      font-size: 1rem;
-    }
-
-    .about-copy p {
-      margin-bottom: 1.15rem;
-      max-width: 760px;
-    }
-
-    .about-copy strong,
-    .framework-copy strong {
-      display: inline-block;
-      margin-bottom: 0.35rem;
-    }
-
-    #about {
-      padding-top: 30px;
-      padding-bottom: 84px;
-    }
-
-<section id="about">
-  <span class="section-kicker">Framework</span>
-
-  <div class="framework-grid">
-    <div class="framework-left">
-      <div class="framework-lead serif">
-        Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
-      </div>
-
-      <img
-        class="framework-image"
-        src="framework-graphic.jpeg"
-        alt="Communication and layered dialogue graphic"
-      />
-    </div>
-
-    <div class="framework-copy">
-      <p><strong>Integrated Perspective</strong></p>
-
-      <p>
-        I do not approach psychology and communication as separate fields. I see them as part of the same system: how people think, what they believe, and how they communicate are constantly shaping each other.
-      </p>
-
-      <p>
-        My work focuses on the point where those systems begin to break down—especially around trust. Whether in media, science, public discourse, or everyday decision-making, I am interested in what happens when people stop believing institutions, experts, or even each other.
-      </p>
-
-      <p>
-        By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, design, and applied communication work.
-      </p>
-    </div>
-  </div>
-</section>
-
-.framework-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 64px;
-  align-items: start;
-}
-
-.framework-left {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  max-width: 520px;
-}
-
-.framework-lead {
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  line-height: 1.08;
-  max-width: 500px;
-}
-
-.framework-image {
-  width: 100%;
-  max-width: 460px;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  object-fit: cover;
-}
-
-.framework-copy {
-  padding-top: 8px;
-}
-
-.framework-copy p {
-  margin-bottom: 1.2rem;
-  max-width: 720px;
-  font-size: 1.02rem;
-  line-height: 1.8;
-}
-    #quick-links,
-    #pillars,
-    #synthesis,
-    #vault {
-      padding-top: 34px;
-      padding-bottom: 84px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      font-size: 1rem;
-    }
-
-    .quick-links-grid,
-    .pillars-grid,
-    .vault-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .artifact-card,
-    .vault-card,
-    .link-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      min-height: 255px;
-      display: flex;
-      flex-direction: column;
-      border-radius: var(--radius);
-    }
-
-    .link-card {
-      min-height: 225px;
-      background: linear-gradient(to bottom, #ffffff, #fbf9f6);
-    }
-
-    .card-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .artifact-card h3,
-    .vault-card h3,
-    .link-card h3 {
-      font-size: 1.62rem;
-      margin-bottom: 10px;
-      line-height: 1.15;
-    }
-
-    .artifact-note {
-      margin-top: auto;
-      padding-top: 14px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .card-actions {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background: var(--text-main);
-      color: #fff;
-      border-color: var(--text-main);
-    }
-
-    .synthesis-wrap,
-    .vault-wrap {
-      max-width: 920px;
-    }
-
-    .feature-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 28px;
-      margin-top: 18px;
-      border-radius: var(--radius);
-    }
-
-    .feature-block h3 {
-      font-size: 1.52rem;
-      margin-bottom: 10px;
-      line-height: 1.18;
-    }
-
-    .muted {
-      color: var(--text-muted);
-    }
-
-    footer {
-      padding: 34px 5% 48px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border);
-      margin-top: 24px;
-    }
-
-    @media (max-width: 980px) {
-      .about-grid,
-      .framework-grid,
-      .quick-links-grid,
-      .pillars-grid,
-      .vault-grid {
-        grid-template-columns: 1fr;
-      }
-
-   .about-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
-  gap: 48px;
-  align-items: start;
-}
-      }
-
-      .artifact-card,
-      .vault-card,
-      .link-card {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 720px) {
-      nav {
-        padding: 14px 5%;
-      }
-
-      nav ul {
-        gap: 10px;
-      }
-
-      nav a {
-        font-size: 0.6rem;
-      }
-
-      .logo {
-        font-size: 0.88rem;
-      }
-
-      .nav-linkedin {
-        padding: 6px 8px;
-      }
-
-      section {
-        padding: 68px 6%;
-      }
-
-      .hero-image {
-        height: 190px;
-        margin-top: 52px;
-      }
-
-      #home {
-        padding-top: 42px;
-        padding-bottom: 58px;
-      }
-
-      .hero-statement {
-        margin-top: 18px;
-      }
-
-      #about-me,
-      #about,
-      #quick-links,
-      #pillars,
-      #synthesis,
-      #vault {
-        padding-top: 24px;
-        padding-bottom: 60px;
-      }
-
-      .feature-block,
-      .vault-card,
-      .artifact-card,
-      .link-card {
-        padding: 18px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      nav ul {
-        display: none;
-      }
-
-      .hero-title {
-        font-size: clamp(2.35rem, 11vw, 3.55rem);
-      }
-
-      .framework-lead {
-        font-size: 2rem;
-        .framework-left {
-  max-width: 100%;
-}
-
-.framework-image {
-  max-width: 100%;
-}
-
-.framework-copy {
-  padding-top: 0;
-}
-      }
-    }
-  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <nav>
-    <div class="logo"><a href="#about-me">Kate Fletcher</a></div>
+  <nav class="site-nav">
+    <div class="logo"><a href="#home">Kate Fletcher</a></div>
     <ul>
       <li><a href="#about-me">About</a></li>
-      <li><a href="#about">Framework</a></li>
-      <li><a href="#quick-links">Pages</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#extensions">Pages</a></li>
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#vault">Vault</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li>
-        <a class="nav-linkedin" href="https://www.linkedin.com/in/kate-fletcher-9b5301267/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a
+          class="nav-linkedin"
+          href="https://www.linkedin.com/in/kate-fletcher-9b5301267/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >LinkedIn</a>
       </li>
     </ul>
   </nav>
 
-  <div class="hero-image"></div>
+  <header class="hero-banner"></header>
 
-  <section id="home">
-    <span class="section-kicker">Perspective</span>
-    <h1 class="hero-title">Behavioral Insights &<br><i>Rhetorical Strategy.</i></h1>
-    <p class="hero-statement">
-      I study how people think, what they believe, and why trust breaks—using psychology and rhetoric to make sense of systems that shape perception, behavior, and power.
-    </p>
-    <p class="hero-subcopy">
-      This portfolio brings together research, writing, rhetorical analysis, and design work shaped by an interdisciplinary interest in public trust, systems, and the way meaning is made and contested.
-    </p>
-  </section>
+  <main>
+    <section id="home" class="hero-section">
+      <span class="section-kicker">Perspective</span>
+      <h1 class="hero-title">Behavioral Insights &amp;<br><i>Rhetorical Strategy.</i></h1>
+      <p class="hero-statement">
+        I study how people think, what they believe, and why trust breaks—using
+        psychology and rhetoric to make sense of systems that shape perception,
+        behavior, and power.
+      </p>
+      <p class="hero-subcopy">
+        This portfolio brings together research, writing, rhetorical analysis,
+        and design work shaped by an interdisciplinary interest in public trust,
+        institutions, expertise, and the way meaning is made and contested.
+      </p>
+    </section>
 
-  <section id="about-me">
-    <span class="section-kicker">About</span>
+    <section id="about-me" class="content-section">
+      <span class="section-kicker">About</span>
 
-    <div class="about-grid">
-      <div class="about-photo-wrap">
-        <img class="about-photo" src="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/F071816A-E5A7-48C6-AD24-863F8F9F71D1_VSCO.jpeg" alt="Kate Fletcher portrait" />
-        <p class="about-caption">Kate Fletcher</p>
+      <div class="about-shell">
+        <div class="about-copy">
+          <h2>About Me</h2>
+          <p class="about-meta"><strong>College of Charleston — Integrated Studies</strong></p>
+
+          <p>
+            I am a student at the College of Charleston studying Integrated Studies,
+            with concentrations in psychology and writing, rhetoric, and publication.
+            My academic interests sit at the intersection of human behavior and
+            communication—especially how people form beliefs, how trust is built or
+            lost, and how information moves through institutions, media, and public life.
+            I am drawn to questions that do not have simple answers, the kinds that
+            require looking at systems from multiple angles and understanding both
+            the individual and the broader structures shaping them.
+          </p>
+
+          <p>
+            I chose Integrated Studies because the questions I care most about could
+            never be answered through just one discipline. Psychology gave me a way
+            to think more seriously about perception, cognition, emotion, and
+            decision-making, while writing and rhetoric gave me a framework for
+            understanding how language, narrative, and persuasion shape the way
+            those psychological processes unfold in the world. For me, these fields
+            are not separate—they are constantly informing one another, and studying
+            them together has allowed me to approach complex issues with more depth
+            and clarity.
+          </p>
+
+          <p>
+            My academic work is also deeply personal. During my first semester of
+            senior year, my brother passed away, and that experience has fundamentally
+            shaped the way I think about people, systems, and value. My brother lived
+            with significant disabilities, and his life—and loss—forced me to confront
+            how society measures worth, who it chooses to prioritize, and how systems
+            often fail those who need them most. Grief has made these questions
+            impossible to ignore. It has pushed me to think more critically about how
+            we talk about humanity, how we structure care, and how easily people are
+            overlooked when they do not fit within traditional definitions of
+            productivity or contribution.
+          </p>
+
+          <p>
+            Because of this, much of my work centers on moments where systems begin
+            to fracture—particularly in relation to trust, expertise, and public
+            understanding. I am interested in what happens when people no longer know
+            who or what to believe, and in the larger cultural and rhetorical
+            conditions that produce that uncertainty. Whether I am examining media
+            environments, institutional credibility, or public discourse, I keep
+            returning to how meaning is shaped, contested, and lived—and how those
+            dynamics impact real people in tangible ways.
+          </p>
+
+          <p>
+            What I am ultimately looking for is work that allows me to engage with
+            these issues at a deeper level. I am drawn to spaces where communication,
+            policy, and human behavior intersect—where the way something is said can
+            influence what is believed, and where understanding that relationship can
+            lead to more thoughtful, ethical decision-making. I want to be in
+            environments where I am not just analyzing problems, but actively
+            thinking about how to address them in ways that are grounded, human,
+            and responsible.
+          </p>
+
+          <p>
+            After graduation, I plan to pursue law school and professional work
+            focused on large-scale systemic issues, particularly those involving
+            public trust, access, and accountability. My goal is not simply to
+            study how systems work, but to contribute to making them more legible,
+            more equitable, and more humane. Everything I have studied—and everything
+            I have experienced—has led me to this point, and I am committed to doing
+            work that reflects both.
+          </p>
+        </div>
+
+        <aside class="about-visual">
+          <img
+            class="about-photo"
+            src="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/F071816A-E5A7-48C6-AD24-863F8F9F71D1_VSCO.jpeg"
+            alt="Kate Fletcher portrait"
+          />
+          <p class="image-caption">Kate Fletcher</p>
+        </aside>
       </div>
+    </section>
 
-      <div class="about-copy">
-        <h2>About Me</h2>
-        <p class="about-meta"><strong>College of Charleston — Integrated Studies</strong></p>
+    <section id="framework" class="content-section">
+      <span class="section-kicker">Framework</span>
 
-        <p>
-          I am a student at the College of Charleston studying Integrated Studies, with concentrations in psychology and writing, rhetoric, and publication. My academic interests sit at the intersection of human behavior and communication—especially how people form beliefs, how trust is built or lost, and how information moves through institutions, media, and public life. I am drawn to questions that do not have simple answers, the kinds that require looking at systems from multiple angles and understanding both the individual and the broader structures shaping them.
-        </p>
+      <div class="framework-shell">
+        <div class="framework-left">
+          <h2 class="framework-lead">
+            Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
+          </h2>
 
-        <p>
-          I chose Integrated Studies because the questions I care most about could never be answered through just one discipline. Psychology gave me a way to think more seriously about perception, cognition, emotion, and decision-making, while writing and rhetoric gave me a framework for understanding how language, narrative, and persuasion shape the way those psychological processes unfold in the world. For me, these fields are not separate—they are constantly informing one another, and studying them together has allowed me to approach complex issues with more depth and clarity.
-        </p>
+          <img
+            class="framework-image"
+            src="framework-graphic.jpeg"
+            alt="Communication and layered dialogue graphic"
+          />
+        </div>
 
-        <p>
-          My academic work is also deeply personal. During my first semester of senior year, my brother passed away, and that experience has fundamentally shaped the way I think about people, systems, and value. My brother lived with significant disabilities, and his life—and loss—forced me to confront how society measures worth, who it chooses to prioritize, and how systems often fail those who need them most. Grief has made these questions impossible to ignore. It has pushed me to think more critically about how we talk about humanity, how we structure care, and how easily people are overlooked when they do not fit within traditional definitions of productivity or contribution.
-        </p>
+        <div class="framework-copy">
+          <p><strong>Integrated Perspective</strong></p>
 
-        <p>
-          Because of this, much of my work centers on moments where systems begin to fracture—particularly in relation to trust, expertise, and public understanding. I am interested in what happens when people no longer know who or what to believe, and in the larger cultural and rhetorical conditions that produce that uncertainty. Whether I am examining media environments, institutional credibility, or public discourse, I keep returning to how meaning is shaped, contested, and lived—and how those dynamics impact real people in tangible ways.
-        </p>
+          <p>
+            I do not approach psychology and communication as separate fields. I see
+            them as part of the same system: how people think, what they believe,
+            and how they communicate are constantly shaping each other.
+          </p>
 
-        <p>
-          What I am ultimately looking for is work that allows me to engage with these issues at a deeper level. I am drawn to spaces where communication, policy, and human behavior intersect—where the way something is said can influence what is believed, and where understanding that relationship can lead to more thoughtful, ethical decision-making. I want to be in environments where I am not just analyzing problems, but actively thinking about how to address them in ways that are grounded, human, and responsible.
-        </p>
+          <p>
+            My work focuses on the point where those systems begin to break
+            down—especially around trust. Whether in media, science, public
+            discourse, or everyday decision-making, I am interested in what happens
+            when people stop believing institutions, experts, or even each other.
+          </p>
 
-        <p>
-          After graduation, I plan to pursue law school and professional work focused on large-scale systemic issues, particularly those involving public trust, access, and accountability. My goal is not simply to study how systems work, but to contribute to making them more legible, more equitable, and more humane. Everything I have studied—and everything I have experienced—has led me to this point, and I am committed to doing work that reflects both.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <span class="section-kicker">Framework</span>
-    <div class="framework-grid">
-      <div class="framework-lead serif">
-        Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
-      </div>
-      <img
-  class="framework-image"
-  src="framework-graphic.jpeg"
-  alt="Communication and layered dialogue graphic"
-/>
-      <div class="framework-copy">
-        <p><strong>Integrated Perspective</strong></p>
-
-        <p>
-          I do not approach psychology and communication as separate fields. I see them as part of the same system: how people think, what they believe, and how they communicate are constantly shaping each other.
-        </p>
-
-        <p>
-          My work focuses on the point where those systems begin to break down—especially around trust. Whether in media, science, public discourse, or everyday decision-making, I am interested in what happens when people stop believing institutions, experts, or even each other.
-        </p>
-
-        <p>
-          By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, design, and applied communication work.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="quick-links">
-    <span class="section-kicker">Additional Pages</span>
-    <h2 class="section-heading">Portfolio Extensions</h2>
-    <p class="section-intro">
-      These pages expand the portfolio beyond project samples alone and make room for a fuller academic and professional picture.
-    </p>
-
-    <div class="quick-links-grid">
-      <div class="link-card">
-        <span class="card-label">Professional</span>
-        <h3>Resume</h3>
-        <p>
-          A dedicated page for experience, education, internships, leadership, and future downloadable resume materials.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="resume.html">Open Resume Page</a>
+          <p>
+            By combining psychological insight with rhetorical strategy, I aim to
+            understand not just what people believe, but why—and how those beliefs
+            are formed, challenged, and changed. This portfolio reflects that
+            interdisciplinary approach through research, writing, rhetorical
+            analysis, design, and applied communication work.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="link-card">
-        <span class="card-label">Recognition</span>
-        <h3>Achievements</h3>
-        <p>
-          A space for honors, milestones, academic accomplishments, publications, presentations, and meaningful recognitions.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="achievements.html">Open Achievements</a>
-        </div>
-      </div>
-
-      <div class="link-card">
-        <span class="card-label">Narrative</span>
-        <h3>My Story</h3>
-        <p>
-          A more personal page that goes deeper than a short bio and leaves room for reflective, statement-like writing.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="story.html">Open My Story</a>
-        </div>
-      </div>
-
-      <div class="link-card">
-        <span class="card-label">Archive</span>
-        <h3>Additional Work Archive</h3>
-        <p>
-          A separate archive for essays, reflections, and projects that fall outside the main portfolio spine but still shape the larger body of my work.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="archive.html">View Archive</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="pillars">
-    <span class="section-kicker">The Pillars</span>
-    <h2 class="section-heading">Core Areas of Work</h2>
-    <p class="section-intro">
-      These projects reflect the main through-lines of my academic work: systems thinking, research, narrative translation, rhetorical analysis, design, and user-centered communication.
-    </p>
-
-    <div class="pillars-grid">
-      <div class="artifact-card">
-        <span class="card-label">Psychology · Systems Thinking</span>
-        <h3>Systems Thinking Research</h3>
-        <p>
-          Investigates how public trust is shaped by expertise, media systems, and cognitive bias. This work reflects my interest in how people form beliefs and how institutional credibility is built, challenged, or lost.
-        </p>
-        <div class="artifact-note">Senior synthesis research / trust, expertise, communication</div>
-        <div class="card-actions">
-          <a class="btn" href="synthesis.html">View Project</a>
-        </div>
-      </div>
-
-      <div class="artifact-card">
-        <span class="card-label">Writing · Narrative</span>
-        <h3>Feature Writing</h3>
-        <p>
-          Translates medical and psychological complexity into human-centered narrative. This work demonstrates my ability to balance research, lived experience, and accessible storytelling for broader audiences.
-        </p>
-        <div class="artifact-note">Longform feature writing / research translation / public-facing prose</div>
-        <div class="card-actions">
-          <a class="btn" href="feature.html">View Project</a>
-        </div>
-      </div>
-
-      <div class="artifact-card">
-        <span class="card-label">Creative Writing · Fiction</span>
-        <h3>Fiction Portfolio</h3>
-        <p>
-          A collected portfolio of fiction writing, revision work, and reflective practice. This piece shows my engagement with craft, emotional structure, revision, and narrative experimentation.
-        </p>
-        <div class="artifact-note">Collected works / revision log / reflective letter / The Hum</div>
-        <div class="card-actions">
-          <a class="btn" href="fiction.html">View Project</a>
-        </div>
-      </div>
-
-      <div class="artifact-card">
-        <span class="card-label">Design · Rhetoric</span>
-        <h3>WRP Leaflet</h3>
-        <p>
-          A public-facing print project focused on hierarchy, audience, flow, and outcomes messaging. This work reflects my interest in rhetoric not just as analysis, but as design and usability in practice.
-        </p>
-        <div class="artifact-note">Program leaflet / design strategy / revision-based communication</div>
-        <div class="card-actions">
-          <a class="btn" href="leaflet.html">View Project</a>
-        </div>
-      </div>
-
-      <div class="artifact-card">
-        <span class="card-label">UX · Applied Research</span>
-        <h3>UX Research</h3>
-        <p>
-          Applies usability testing and behavioral observation to identify friction points in digital environments. This work highlights my attention to user perception, trust signals, and evidence-based communication design.
-        </p>
-        <div class="artifact-note">Craigslist usability case study / navigation / trust / design friction</div>
-        <div class="card-actions">
-          <a class="btn" href="ux.html">View Project</a>
-        </div>
-      </div>
-
-      <div class="artifact-card">
-        <span class="card-label">Rhetoric · Analysis</span>
-        <h3>Fine Line Essay</h3>
-        <p>
-          Explores how language, emotion, and lived experience interact in cultural analysis. This essay reflects my interest in interpretation, audience, and the rhetorical texture of personal and public meaning.
-        </p>
-        <div class="artifact-note">Music and culture / rhetorical interpretation / personal-critical analysis</div>
-        <div class="card-actions">
-          <a class="btn" href="fineline.html">View Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="synthesis">
-    <span class="section-kicker">The Synthesis</span>
-    <div class="synthesis-wrap">
-      <h2 class="section-heading">Capstone: Who Do We Trust?</h2>
+    <section id="extensions" class="content-section">
+      <span class="section-kicker">Additional Pages</span>
+      <h2 class="section-heading">Portfolio Extensions</h2>
       <p class="section-intro">
-        A research-driven project examining how expert disagreement, media systems, and public perception shape trust in modern society.
+        These pages expand the portfolio beyond project samples alone and make room
+        for a fuller academic and professional picture.
       </p>
 
-      <div class="feature-block">
-        <h3>Project Focus</h3>
-        <p>
-          This capstone asks how trust in expertise is built, destabilized, and rhetorically negotiated—especially in scientific and public-facing contexts. Drawing from psychology, science communication, and rhetorical analysis, the project explores why factual accuracy alone is often not enough to sustain public trust.
-        </p>
-        <p class="muted">
-          This is the current working version of the paper and will be updated as the final project develops.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="synthesis.html">Open Project Page</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="vault">
-    <span class="section-kicker">The Vault</span>
-    <div class="vault-wrap">
-      <h2 class="section-heading">Growth, Revision, and Additional Work</h2>
-      <p class="section-intro">
-        This section holds projects that show breadth, experimentation, and the larger shape of my academic interests beyond the portfolio’s main spine.
-      </p>
-
-      <div class="vault-grid">
-        <div class="vault-card">
-          <h3>Music Composition Essay</h3>
+      <div class="card-grid card-grid-small">
+        <article class="info-card">
+          <span class="card-label">Professional</span>
+          <h3>Resume</h3>
           <p>
-            A personal-critical analysis of Tchaikovsky’s “Pathétique” as a reflection of personal and societal struggle.
+            A dedicated page for experience, education, internships, leadership,
+            and future downloadable resume materials.
           </p>
           <div class="card-actions">
-            <a class="btn" href="https://github.com/katefletcher32505/portfolio/blob/main/Kate%20Fletcher%20Music%20Composition%20Essay.pdf?raw=true" target="_blank" rel="noopener noreferrer">Read Essay</a>
+            <a class="btn" href="resume.html">Open Resume Page</a>
           </div>
-        </div>
+        </article>
 
-        <div class="vault-card">
-          <h3>The Walking Dead Essay</h3>
+        <article class="info-card">
+          <span class="card-label">Recognition</span>
+          <h3>Achievements</h3>
           <p>
-            A longform reflective analysis connecting family, survival, morality, and media narrative.
+            A space for honors, milestones, academic accomplishments, publications,
+            presentations, and meaningful recognitions.
           </p>
           <div class="card-actions">
-            <a class="btn" href="https://github.com/katefletcher32505/portfolio/blob/main/the%20walking%20dead%20essay.docx?raw=true" target="_blank" rel="noopener noreferrer">Open Document</a>
+            <a class="btn" href="achievements.html">Open Achievements</a>
           </div>
-        </div>
+        </article>
 
-        <div class="vault-card">
-          <h3>Fine Line Essay</h3>
+        <article class="info-card">
+          <span class="card-label">Narrative</span>
+          <h3>My Story</h3>
           <p>
-            A cultural-rhetorical exploration of Harry Styles’ “Fine Line” through emotion, conflict, and lived experience.
+            A more personal page that goes deeper than a short bio and leaves room
+            for reflective, statement-like writing.
           </p>
           <div class="card-actions">
-            <a class="btn" href="https://github.com/katefletcher32505/portfolio/blob/main/Fine%20Line%20Essay.pdf?raw=true" target="_blank" rel="noopener noreferrer">Read Essay</a>
+            <a class="btn" href="story.html">Open My Story</a>
           </div>
-        </div>
+        </article>
 
-        <div class="vault-card">
+        <article class="info-card">
+          <span class="card-label">Archive</span>
           <h3>Additional Work Archive</h3>
           <p>
-            A separate archive for essays, reflections, and other projects that fall outside the main portfolio categories but still shape the larger body of my work.
+            A separate archive for essays, reflections, and projects that fall
+            outside the main portfolio spine but still shape the larger body of my work.
           </p>
           <div class="card-actions">
             <a class="btn" href="archive.html">View Archive</a>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pillars" class="content-section">
+      <span class="section-kicker">The Pillars</span>
+      <h2 class="section-heading">Core Areas of Work</h2>
+      <p class="section-intro">
+        These projects reflect the main through-lines of my academic work:
+        systems thinking, research, narrative translation, rhetorical analysis,
+        design, and user-centered communication.
+      </p>
+
+      <div class="card-grid">
+        <article class="project-card">
+          <span class="card-label">Psychology · Systems Thinking</span>
+          <h3>Systems Thinking Research</h3>
+          <p>
+            Investigates how public trust is shaped by expertise, media systems,
+            and cognitive bias. This work reflects my interest in how people form
+            beliefs and how institutional credibility is built, challenged, or lost.
+          </p>
+          <p class="artifact-note">Senior synthesis research / trust, expertise, communication</p>
+          <div class="card-actions">
+            <a class="btn" href="synthesis.html">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="card-label">Writing · Narrative</span>
+          <h3>Feature Writing</h3>
+          <p>
+            Translates medical and psychological complexity into human-centered
+            narrative. This work demonstrates my ability to balance research,
+            lived experience, and accessible storytelling for broader audiences.
+          </p>
+          <p class="artifact-note">Longform feature writing / research translation / public-facing prose</p>
+          <div class="card-actions">
+            <a class="btn" href="feature.html">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="card-label">Creative Writing · Fiction</span>
+          <h3>Fiction Portfolio</h3>
+          <p>
+            A collected portfolio of fiction writing, revision work, and reflective
+            practice. This piece shows my engagement with craft, emotional structure,
+            revision, and narrative experimentation.
+          </p>
+          <p class="artifact-note">Collected works / revision log / reflective letter / The Hum</p>
+          <div class="card-actions">
+            <a class="btn" href="fiction.html">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="card-label">Design · Rhetoric</span>
+          <h3>WRP Leaflet</h3>
+          <p>
+            A public-facing print project focused on hierarchy, audience, flow,
+            and outcomes messaging. This work reflects my interest in rhetoric not
+            just as analysis, but as design and usability in practice.
+          </p>
+          <p class="artifact-note">Program leaflet / design strategy / revision-based communication</p>
+          <div class="card-actions">
+            <a class="btn" href="leaflet.html">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="card-label">UX · Applied Research</span>
+          <h3>UX Research</h3>
+          <p>
+            Applies usability testing and behavioral observation to identify
+            friction points in digital environments. This work highlights my
+            attention to user perception, trust signals, and evidence-based
+            communication design.
+          </p>
+          <p class="artifact-note">Craigslist usability case study / navigation / trust / design friction</p>
+          <div class="card-actions">
+            <a class="btn" href="ux.html">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="card-label">Rhetoric · Analysis</span>
+          <h3>Fine Line Essay</h3>
+          <p>
+            Explores how language, emotion, and lived experience interact in
+            cultural analysis. This essay reflects my interest in interpretation,
+            audience, and the rhetorical texture of personal and public meaning.
+          </p>
+          <p class="artifact-note">Music and culture / rhetorical interpretation / personal-critical analysis</p>
+          <div class="card-actions">
+            <a class="btn" href="fineline.html">View Project</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="synthesis" class="content-section">
+      <span class="section-kicker">The Synthesis</span>
+      <div class="narrow-wrap">
+        <h2 class="section-heading">Capstone: Who Do We Trust?</h2>
+        <p class="section-intro">
+          A research-driven project examining how expert disagreement, media
+          systems, and public perception shape trust in modern society.
+        </p>
+
+        <article class="feature-block">
+          <h3>Project Focus</h3>
+          <p>
+            This capstone asks how trust in expertise is built, destabilized, and
+            rhetorically negotiated—especially in scientific and public-facing
+            contexts. Drawing from psychology, science communication, and rhetorical
+            analysis, the project explores why factual accuracy alone is often not
+            enough to sustain public trust.
+          </p>
+          <p class="muted">
+            This is the current working version of the paper and will be updated
+            as the final project develops.
+          </p>
+          <div class="card-actions">
+            <a class="btn" href="synthesis.html">Open Project Page</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="vault" class="content-section">
+      <span class="section-kicker">The Vault</span>
+      <div class="narrow-wrap">
+        <h2 class="section-heading">Growth, Revision, and Additional Work</h2>
+        <p class="section-intro">
+          This section holds projects that show breadth, experimentation, and the
+          larger shape of my academic interests beyond the portfolio’s main spine.
+        </p>
+
+        <div class="card-grid card-grid-small">
+          <article class="info-card">
+            <h3>Music Composition Essay</h3>
+            <p>
+              A personal-critical analysis of Tchaikovsky’s “Pathétique” as a
+              reflection of personal and societal struggle.
+            </p>
+            <div class="card-actions">
+              <a
+                class="btn"
+                href="https://github.com/katefletcher32505/portfolio/blob/main/Kate%20Fletcher%20Music%20Composition%20Essay.pdf?raw=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Read Essay</a>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <h3>The Walking Dead Essay</h3>
+            <p>
+              A longform reflective analysis connecting family, survival,
+              morality, and media narrative.
+            </p>
+            <div class="card-actions">
+              <a
+                class="btn"
+                href="https://github.com/katefletcher32505/portfolio/blob/main/the%20walking%20dead%20essay.docx?raw=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Open Document</a>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <h3>Fine Line Essay</h3>
+            <p>
+              A cultural-rhetorical exploration of Harry Styles’ “Fine Line”
+              through emotion, conflict, and lived experience.
+            </p>
+            <div class="card-actions">
+              <a
+                class="btn"
+                href="https://github.com/katefletcher32505/portfolio/blob/main/Fine%20Line%20Essay.pdf?raw=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Read Essay</a>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <h3>Additional Work Archive</h3>
+            <p>
+              A separate archive for essays, reflections, and other projects that
+              fall outside the main portfolio categories but still shape the
+              larger body of my work.
+            </p>
+            <div class="card-actions">
+              <a class="btn" href="archive.html">View Archive</a>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>© Kate Fletcher · Integrated Studies Portfolio</p>

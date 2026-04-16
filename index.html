@@ -236,7 +236,6 @@
   <span class="section-kicker">Framework</span>
 
   <div class="framework-grid">
-    
     <div class="framework-left">
       <div class="framework-lead serif">
         Bridging the gap between <i>how we think</i> and <i>how we communicate.</i>
@@ -264,28 +263,48 @@
         By combining psychological insight with rhetorical strategy, I aim to understand not just what people believe, but why—and how those beliefs are formed, challenged, and changed. This portfolio reflects that interdisciplinary approach through research, writing, rhetorical analysis, design, and applied communication work.
       </p>
     </div>
-
   </div>
 </section>
 
+.framework-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.framework-left {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 520px;
+}
+
+.framework-lead {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.08;
+  max-width: 500px;
+}
+
 .framework-image {
   width: 100%;
-  max-width: 520px;
+  max-width: 460px;
   border-radius: 18px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   object-fit: cover;
 }
-    .framework-lead {
-      font-size: clamp(2rem, 4.2vw, 3.35rem);
-      line-height: 1.18;
-    }
 
-    .framework-copy p {
-      margin-bottom: 1rem;
-      max-width: 720px;
-    }
+.framework-copy {
+  padding-top: 8px;
+}
 
+.framework-copy p {
+  margin-bottom: 1.2rem;
+  max-width: 720px;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
     #quick-links,
     #pillars,
     #synthesis,
@@ -418,13 +437,12 @@
         grid-template-columns: 1fr;
       }
 
-      .about-grid {
-        gap: 30px;
-      }
-
-      .about-photo-wrap {
-        position: static;
-        max-width: 360px;
+   .about-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
       }
 
       .artifact-card,

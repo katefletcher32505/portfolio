@@ -8,6 +8,7 @@
   --border: #e3e8ef;
   --max-width: 1220px;
   --shadow: 0 14px 30px rgba(20, 20, 20, 0.045);
+  --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.08);
   --radius: 20px;
 }
 
@@ -50,6 +51,7 @@ img {
 
 /* NAV */
 
+.site-nav,
 nav {
   position: fixed;
   top: 0;
@@ -71,6 +73,7 @@ nav {
   letter-spacing: 0.01em;
 }
 
+.nav-links,
 nav ul {
   display: flex;
   gap: 18px;
@@ -79,6 +82,7 @@ nav ul {
   flex-wrap: wrap;
 }
 
+.site-nav a,
 nav a {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -86,6 +90,7 @@ nav a {
   transition: opacity 0.2s ease;
 }
 
+.site-nav a:hover,
 nav a:hover {
   opacity: 0.65;
 }
@@ -99,10 +104,15 @@ nav a:hover {
 
 /* PAGE STRUCTURE */
 
-section {
+section,
+.section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 88px 5%;
+}
+
+.section {
+  border-top: 1px solid var(--border);
 }
 
 .section-kicker {
@@ -129,6 +139,7 @@ section {
 
 /* HERO */
 
+.hero-banner,
 .hero-image {
   width: 100%;
   height: 260px;
@@ -139,10 +150,23 @@ section {
   margin-top: 58px;
 }
 
-#home {
+#home,
+.hero {
   text-align: center;
   padding-top: 66px;
   padding-bottom: 82px;
+  position: relative;
+}
+
+.hero::after,
+#home::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--text-main);
+  margin: 28px auto 0;
+  opacity: 0.2;
 }
 
 .hero-title {
@@ -167,6 +191,14 @@ section {
   margin: 26px auto 0;
   color: var(--text-muted);
   font-size: 0.98rem;
+}
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* ABOUT */
@@ -201,6 +233,11 @@ section {
   border-radius: 18px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.02);
 }
 
 .about-caption {
@@ -260,6 +297,7 @@ section {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   object-fit: cover;
+  transform: rotate(-1.5deg);
 }
 
 .framework-copy {
@@ -283,14 +321,26 @@ section {
   padding-bottom: 84px;
 }
 
+.card-grid,
 .quick-links-grid,
 .pillars-grid,
 .vault-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
+.two-up,
+.pillars-grid,
+.vault-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.four-up,
+.quick-links-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.card,
 .artifact-card,
 .vault-card,
 .link-card {
@@ -302,6 +352,15 @@ section {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.card:hover,
+.artifact-card:hover,
+.vault-card:hover,
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .link-card {
@@ -318,6 +377,7 @@ section {
   color: var(--text-muted);
 }
 
+.card h3,
 .artifact-card h3,
 .vault-card h3,
 .link-card h3 {
@@ -326,6 +386,7 @@ section {
   line-height: 1.15;
 }
 
+.card p,
 .artifact-card p,
 .vault-card p,
 .link-card p,
@@ -347,22 +408,44 @@ section {
   gap: 10px;
 }
 
+/* BUTTONS */
+
 .btn {
   display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  background: #fff;
+  padding: 11px 16px;
   border-radius: 999px;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   transition: all 0.2s ease;
+  border: 1px solid var(--border);
 }
 
-.btn:hover {
+.btn-primary {
   background: var(--text-main);
   color: #fff;
   border-color: var(--text-main);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  background: var(--text-main);
+  color: #fff;
+  border-color: var(--text-main);
+}
+
+/* SOFT CARD */
+
+.card-soft {
+  background: linear-gradient(to bottom, #ffffff, #fbf9f6);
 }
 
 /* SYNTHESIS */
@@ -409,7 +492,9 @@ footer {
   .framework-grid,
   .quick-links-grid,
   .pillars-grid,
-  .vault-grid {
+  .vault-grid,
+  .two-up,
+  .four-up {
     grid-template-columns: 1fr;
   }
 
@@ -434,6 +519,7 @@ footer {
     padding-top: 0;
   }
 
+  .card,
   .artifact-card,
   .vault-card,
   .link-card {
@@ -442,14 +528,17 @@ footer {
 }
 
 @media (max-width: 720px) {
+  .site-nav,
   nav {
     padding: 14px 5%;
   }
 
+  .nav-links,
   nav ul {
     gap: 10px;
   }
 
+  .site-nav a,
   nav a {
     font-size: 0.6rem;
   }
@@ -462,16 +551,19 @@ footer {
     padding: 6px 8px;
   }
 
-  section {
+  section,
+  .section {
     padding: 68px 6%;
   }
 
+  .hero-banner,
   .hero-image {
     height: 190px;
     margin-top: 52px;
   }
 
-  #home {
+  #home,
+  .hero {
     padding-top: 42px;
     padding-bottom: 58px;
   }
@@ -493,12 +585,14 @@ footer {
   .feature-block,
   .vault-card,
   .artifact-card,
-  .link-card {
+  .link-card,
+  .card {
     padding: 18px;
   }
 }
 
 @media (max-width: 560px) {
+  .nav-links,
   nav ul {
     display: none;
   }

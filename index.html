@@ -7,18 +7,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg-color: #fcfbf9;
       --surface: #ffffff;
-      --text-main: #161616;
-      --text-muted: #5f6672;
+      --surface-soft: #f8f5f1;
+      --text-main: #181818;
+      --text-muted: #606875;
       --accent: #4a5568;
       --border: #e3e8ef;
-      --max-width: 1200px;
-      --shadow: 0 10px 24px rgba(20, 20, 20, 0.04);
+      --max-width: 1220px;
+      --shadow: 0 14px 30px rgba(20, 20, 20, 0.045);
+      --radius: 20px;
     }
 
     * {
@@ -35,7 +37,7 @@
       font-family: "Inter", sans-serif;
       background: var(--bg-color);
       color: var(--text-main);
-      line-height: 1.65;
+      line-height: 1.72;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -72,7 +74,7 @@
 
     .logo {
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.01em;
     }
 
@@ -99,12 +101,13 @@
       padding: 8px 12px;
       border: 1px solid var(--border);
       background: var(--surface);
+      border-radius: 999px;
     }
 
     section {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 72px 5%;
+      padding: 88px 5%;
     }
 
     .section-kicker {
@@ -118,7 +121,7 @@
 
     .hero-image {
       width: 100%;
-      height: 250px;
+      height: 290px;
       background-image: url("https://raw.githubusercontent.com/katefletcher32505/portfolio/main/IMG_4955.webp");
       background-size: cover;
       background-position: center;
@@ -128,71 +131,93 @@
 
     #home {
       text-align: center;
-      padding-top: 56px;
-      padding-bottom: 72px;
+      padding-top: 66px;
+      padding-bottom: 82px;
     }
 
     .hero-title {
-      font-size: clamp(2.7rem, 7vw, 5.2rem);
-      line-height: 1.02;
-      max-width: 920px;
+      font-size: clamp(2.9rem, 7vw, 5.5rem);
+      line-height: 1.01;
+      max-width: 940px;
       margin: 0 auto;
     }
 
     .hero-statement {
       max-width: 860px;
-      margin: 22px auto 0;
-      font-size: clamp(1.05rem, 2.3vw, 1.55rem);
+      margin: 24px auto 0;
+      font-size: clamp(1.06rem, 2.2vw, 1.48rem);
       color: var(--accent);
       font-style: italic;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.78;
+    }
+
+    .hero-subcopy {
+      max-width: 760px;
+      margin: 26px auto 0;
+      color: var(--text-muted);
+      font-size: 0.98rem;
     }
 
     #about-me {
-      padding-top: 48px;
-      padding-bottom: 72px;
+      padding-top: 42px;
+      padding-bottom: 86px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 42px;
-      align-items: center;
+      grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
     }
 
     .about-photo-wrap {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
+      position: sticky;
+      top: 96px;
     }
 
     .about-photo {
-      width: 240px;
-      height: 240px;
+      width: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      border-radius: 16px;
+      object-position: center;
+      border-radius: 18px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
 
+    .about-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
     .about-copy h2,
     .section-heading {
-      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3.1rem);
       margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .about-meta {
+      margin-bottom: 20px;
+      color: var(--text-muted);
     }
 
     .about-copy p,
     .framework-copy p,
     .feature-block p,
     .vault-card p,
-    .artifact-card p {
+    .artifact-card p,
+    .link-card p {
       font-size: 1rem;
     }
 
     .about-copy p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.15rem;
       max-width: 760px;
     }
 
@@ -203,14 +228,14 @@
     }
 
     #about {
-      padding-top: 32px;
-      padding-bottom: 72px;
+      padding-top: 30px;
+      padding-bottom: 84px;
     }
 
     .framework-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 56px;
       align-items: start;
     }
 
@@ -221,20 +246,21 @@
 
     .framework-copy p {
       margin-bottom: 1rem;
+      max-width: 720px;
     }
 
     #quick-links,
     #pillars,
     #synthesis,
     #vault {
-      padding-top: 32px;
-      padding-bottom: 72px;
+      padding-top: 34px;
+      padding-bottom: 84px;
     }
 
     .section-intro {
       max-width: 760px;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       font-size: 1rem;
     }
 
@@ -251,15 +277,17 @@
     .link-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 22px;
+      padding: 24px;
       box-shadow: var(--shadow);
-      min-height: 250px;
+      min-height: 255px;
       display: flex;
       flex-direction: column;
+      border-radius: var(--radius);
     }
 
     .link-card {
-      min-height: 210px;
+      min-height: 225px;
+      background: linear-gradient(to bottom, #ffffff, #fbf9f6);
     }
 
     .card-label {
@@ -274,7 +302,7 @@
     .artifact-card h3,
     .vault-card h3,
     .link-card h3 {
-      font-size: 1.6rem;
+      font-size: 1.62rem;
       margin-bottom: 10px;
       line-height: 1.15;
     }
@@ -298,6 +326,7 @@
       padding: 10px 14px;
       border: 1px solid var(--border);
       background: #fff;
+      border-radius: 999px;
       font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -312,20 +341,22 @@
 
     .synthesis-wrap,
     .vault-wrap {
-      max-width: 900px;
+      max-width: 920px;
     }
 
     .feature-block {
       background: var(--surface);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      padding: 24px;
+      padding: 28px;
       margin-top: 18px;
+      border-radius: var(--radius);
     }
 
     .feature-block h3 {
-      font-size: 1.45rem;
+      font-size: 1.52rem;
       margin-bottom: 10px;
+      line-height: 1.18;
     }
 
     .muted {
@@ -333,12 +364,12 @@
     }
 
     footer {
-      padding: 32px 5% 44px;
+      padding: 34px 5% 48px;
       text-align: center;
       color: var(--text-muted);
       font-size: 0.8rem;
       border-top: 1px solid var(--border);
-      margin-top: 20px;
+      margin-top: 24px;
     }
 
     @media (max-width: 980px) {
@@ -351,7 +382,12 @@
       }
 
       .about-grid {
-        gap: 28px;
+        gap: 30px;
+      }
+
+      .about-photo-wrap {
+        position: static;
+        max-width: 360px;
       }
 
       .artifact-card,
@@ -383,17 +419,17 @@
       }
 
       section {
-        padding: 64px 6%;
+        padding: 68px 6%;
       }
 
       .hero-image {
-        height: 180px;
+        height: 190px;
         margin-top: 52px;
       }
 
       #home {
-        padding-top: 40px;
-        padding-bottom: 56px;
+        padding-top: 42px;
+        padding-bottom: 58px;
       }
 
       .hero-statement {
@@ -407,12 +443,7 @@
       #synthesis,
       #vault {
         padding-top: 24px;
-        padding-bottom: 56px;
-      }
-
-      .about-photo {
-        width: 150px;
-        height: 150px;
+        padding-bottom: 60px;
       }
 
       .feature-block,
@@ -429,7 +460,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.35rem, 11vw, 3.5rem);
+        font-size: clamp(2.35rem, 11vw, 3.55rem);
       }
 
       .framework-lead {
@@ -463,45 +494,50 @@
     <p class="hero-statement">
       I study how people think, what they believe, and why trust breaks—using psychology and rhetoric to make sense of systems that shape perception, behavior, and power.
     </p>
+    <p class="hero-subcopy">
+      This portfolio brings together research, writing, rhetorical analysis, and design work shaped by an interdisciplinary interest in public trust, systems, and the way meaning is made and contested.
+    </p>
   </section>
 
   <section id="about-me">
     <span class="section-kicker">About</span>
+
     <div class="about-grid">
       <div class="about-photo-wrap">
         <img class="about-photo" src="https://raw.githubusercontent.com/katefletcher32505/portfolio/main/F071816A-E5A7-48C6-AD24-863F8F9F71D1_VSCO.jpeg" alt="Kate Fletcher portrait" />
+        <p class="about-caption">Kate Fletcher</p>
       </div>
 
       <div class="about-copy">
         <h2>About Me</h2>
-        <p><strong>College of Charleston — Integrated Studies</strong></p>
+        <p class="about-meta"><strong>College of Charleston — Integrated Studies</strong></p>
 
         <p>
-  I am a student at the College of Charleston studying Integrated Studies, with concentrations in psychology and writing, rhetoric, and publication. My academic interests sit at the intersection of human behavior and communication—especially how people form beliefs, how trust is built or lost, and how information moves through institutions, media, and public life. I am drawn to questions that don’t have simple answers, the kinds that require looking at systems from multiple angles and understanding both the individual and the broader structures shaping them.
-</p>
+          I am a student at the College of Charleston studying Integrated Studies, with concentrations in psychology and writing, rhetoric, and publication. My academic interests sit at the intersection of human behavior and communication—especially how people form beliefs, how trust is built or lost, and how information moves through institutions, media, and public life. I am drawn to questions that do not have simple answers, the kinds that require looking at systems from multiple angles and understanding both the individual and the broader structures shaping them.
+        </p>
 
-<p>
-  I chose Integrated Studies because the questions I care most about could never be answered through just one discipline. Psychology gave me a way to think more seriously about perception, cognition, emotion, and decision-making, while writing and rhetoric gave me a framework for understanding how language, narrative, and persuasion shape the way those psychological processes unfold in the world. For me, these fields are not separate—they are constantly informing one another, and studying them together has allowed me to approach complex issues with more depth and clarity.
-</p>
+        <p>
+          I chose Integrated Studies because the questions I care most about could never be answered through just one discipline. Psychology gave me a way to think more seriously about perception, cognition, emotion, and decision-making, while writing and rhetoric gave me a framework for understanding how language, narrative, and persuasion shape the way those psychological processes unfold in the world. For me, these fields are not separate—they are constantly informing one another, and studying them together has allowed me to approach complex issues with more depth and clarity.
+        </p>
 
-<p>
-  My academic work is also deeply personal. During my first semester of senior year, my brother passed away, and that experience has fundamentally shaped the way I think about people, systems, and value. My brother lived with significant disabilities, and his life—and loss—forced me to confront how society measures worth, who it chooses to prioritize, and how systems often fail those who need them most. Grief has made these questions impossible to ignore. It has pushed me to think more critically about how we talk about humanity, how we structure care, and how easily people are overlooked when they do not fit within traditional definitions of productivity or contribution.
-</p>
+        <p>
+          My academic work is also deeply personal. During my first semester of senior year, my brother passed away, and that experience has fundamentally shaped the way I think about people, systems, and value. My brother lived with significant disabilities, and his life—and loss—forced me to confront how society measures worth, who it chooses to prioritize, and how systems often fail those who need them most. Grief has made these questions impossible to ignore. It has pushed me to think more critically about how we talk about humanity, how we structure care, and how easily people are overlooked when they do not fit within traditional definitions of productivity or contribution.
+        </p>
 
-<p>
-  Because of this, much of my work centers on moments where systems begin to fracture—particularly in relation to trust, expertise, and public understanding. I am interested in what happens when people no longer know who or what to believe, and in the larger cultural and rhetorical conditions that produce that uncertainty. Whether I am examining media environments, institutional credibility, or public discourse, I keep returning to how meaning is shaped, contested, and lived—and how those dynamics impact real people in tangible ways.
-</p>
+        <p>
+          Because of this, much of my work centers on moments where systems begin to fracture—particularly in relation to trust, expertise, and public understanding. I am interested in what happens when people no longer know who or what to believe, and in the larger cultural and rhetorical conditions that produce that uncertainty. Whether I am examining media environments, institutional credibility, or public discourse, I keep returning to how meaning is shaped, contested, and lived—and how those dynamics impact real people in tangible ways.
+        </p>
 
-<p>
-  What I am ultimately looking for is work that allows me to engage with these issues at a deeper level. I am drawn to spaces where communication, policy, and human behavior intersect—where the way something is said can influence what is believed, and where understanding that relationship can lead to more thoughtful, ethical decision-making. I want to be in environments where I am not just analyzing problems, but actively thinking about how to address them in ways that are grounded, human, and responsible.
-</p>
+        <p>
+          What I am ultimately looking for is work that allows me to engage with these issues at a deeper level. I am drawn to spaces where communication, policy, and human behavior intersect—where the way something is said can influence what is believed, and where understanding that relationship can lead to more thoughtful, ethical decision-making. I want to be in environments where I am not just analyzing problems, but actively thinking about how to address them in ways that are grounded, human, and responsible.
+        </p>
 
-<p>
-  After graduation, I plan to pursue law school and professional work focused on large-scale systemic issues, particularly those involving public trust, access, and accountability. My goal is not simply to study how systems work, but to contribute to making them more legible, more equitable, and more humane. Everything I have studied—and everything I have experienced—has led me to this point, and I am committed to doing work that reflects both.
-</p>
-</div>
-</div>
-</section>
+        <p>
+          After graduation, I plan to pursue law school and professional work focused on large-scale systemic issues, particularly those involving public trust, access, and accountability. My goal is not simply to study how systems work, but to contribute to making them more legible, more equitable, and more humane. Everything I have studied—and everything I have experienced—has led me to this point, and I am committed to doing work that reflects both.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <section id="about">
     <span class="section-kicker">Framework</span>

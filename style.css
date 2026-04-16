@@ -617,3 +617,12 @@ footer {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
+.hero-image {
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 1px solid var(--border);
+
+  /* subtle polish */
+  filter: brightness(0.92);
+}

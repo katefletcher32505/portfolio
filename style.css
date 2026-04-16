@@ -605,3 +605,15 @@ footer {
     font-size: 2rem;
   }
 }
+.hero-graphic {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  /* makes it feel more editorial / less stiff */
+  transform: rotate(-0.5deg);
+}

@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Story | Kate Fletcher</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg-color: #fcfbf9;
@@ -19,20 +21,23 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: "Inter", sans-serif;
       background: var(--bg-color);
       color: var(--text-main);
-      line-height: 1.7;
+      line-height: 1.75;
       padding: 40px 5%;
     }
 
-    h1, h2 {
+    h1 {
       font-family: "Playfair Display", serif;
       letter-spacing: -0.02em;
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      margin-bottom: 18px;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
 
     .wrap {
       max-width: var(--max-width);
@@ -53,32 +58,144 @@
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       border-radius: 18px;
-      padding: 28px;
-    }
-
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 3.5rem);
-      margin-bottom: 14px;
+      padding: 36px;
     }
 
     .intro {
       color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .story p {
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .pull-quote {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin: 40px 0;
+      padding-left: 20px;
+      border-left: 3px solid #161616;
+      color: #333;
       max-width: 700px;
-      margin-bottom: 28px;
+    }
+
+    @media (max-width: 700px) {
+      .card { padding: 24px; }
+      .pull-quote { font-size: 1.2rem; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <a class="top-link" href="index.html">← Back to Portfolio</a>
+
     <div class="card">
       <h1>My Story</h1>
+
       <p class="intro">
-        This page will eventually become a deeper, more reflective narrative — something more personal than a short About section and closer to a thoughtful letter or statement.
+        A personal narrative tracing how health, family, and lived experience shaped the way I think about psychology, communication, and systems.
       </p>
-      <p>
-        Placeholder page for now.
-      </p>
+
+      <div class="story">
+
+        <p>I didn’t come to the College of Charleston expecting my life to split in two.</p>
+
+        <p>I came here like most people do—unfinished, but intact. I liked writing. I paid attention to people. I thought college would be where things started to make sense. I didn’t expect that almost immediately, I would be forced to rebuild from the inside out.</p>
+
+        <p>Because not long after I got here, my body interrupted everything.</p>
+
+        <p>For years, I had been living with something I didn’t fully understand—a tethered spinal cord. It had always been there, shaping my body in ways I couldn’t fully explain. Then, during my first year at CofC, it stopped being background noise and became something urgent.</p>
+
+        <p>I had to undergo spinal surgery at MUSC.</p>
+
+        <p>And when your spine is involved, it’s not just physical—it’s neurological. It’s your nervous system, your sense of control, your ability to feel stable. Recovery takes years, not weeks, and even then, it’s not about going back—it’s about learning how to exist differently.</p>
+
+        <p>My neurosurgeon told me something I haven’t been able to stop thinking about. When he cut my filum—the part tethering my spinal cord—it tried to snap back into place. Like it had been held there for so long it didn’t know how to exist any other way. He had to cut it twice to make sure it would actually release.</p>
+
+        <div class="pull-quote">
+          Even when something is finally freed, it still tries to return to what it’s always known.
+        </div>
+
+        <p>That feels like my life.</p>
+
+        <p>At the same time, I was still a freshman trying to figure out college. I didn’t understand withdrawals. I didn’t know how to advocate for myself while recovering from something that serious. I had to leave the Honors College—not because I wasn’t capable, but because I didn’t have the capacity.</p>
+
+        <p>So I rerouted. Summer classes. Adjusted schedules. Learning how to work with limits instead of ignoring them. Locking in—not out of ambition, but necessity.</p>
+
+        <p>But even before all of that, my life had already been shaped by something else.</p>
+
+        <p>My older brother, Shields—older than me by two years.</p>
+
+        <p>He had Prader-Willi syndrome.</p>
+
+        <p>And that’s one of those things that sounds simple when you explain it clinically, but it’s not. Because it doesn’t just affect one person—it reshapes everything around them.</p>
+
+        <p>Food wasn’t just food in our house. It was control. Safety. Tension. Routine. Fear. It dictated everything—how we moved, how we interacted, what we could leave out, what we couldn’t.</p>
+
+        <p>And Shields lived with a hunger that never turned off. Not metaphorically—literally. Something biological, something neurological, something he could not control.</p>
+
+        <p>Which meant everything around him had to be controlled instead.</p>
+
+        <p>And growing up in that kind of environment changes you.</p>
+
+        <p>I became hyper-aware without realizing it. I learned to anticipate, to adjust, to read situations before they escalated. That kind of awareness doesn’t go away—it becomes instinct.</p>
+
+        <p>And it was hard. There’s no way around that.</p>
+
+        <p>It was exhausting. It was unpredictable. It shaped our entire family. And at the same time, I loved him completely.</p>
+
+        <p>Those things aren’t separate. They exist together.</p>
+
+        <p>College is where I started to understand that.</p>
+
+        <p>Writing forced me to. Psychology gave me language for it.</p>
+
+        <p>I became interested in how environments shape behavior. How chronic stress affects the body. How the brain and body aren’t separate systems, but constantly interacting.</p>
+
+        <p>And just as I was starting to make sense of all of that—everything changed again.</p>
+
+        <p>Shields died in October.</p>
+
+        <p>He was 22.</p>
+
+        <p>Grief doesn’t feel like one thing. It feels like being pulled in two directions at once.</p>
+
+        <p>Part of me feels stuck—like I’m still in that moment. And another part of me is moving forward, going to class, finishing assignments, continuing life because there’s no other option.</p>
+
+        <p>And those two versions of me exist at the same time.</p>
+
+        <p>I’m still here. Still finishing what I started.</p>
+
+        <p>But the reason is different now.</p>
+
+        <p>Shields never got this. He never got to go to college. And that doesn’t make what I’m doing tragic—it makes it intentional.</p>
+
+        <p>I’m doing this for him.</p>
+
+        <p>Everything connects now—my health, my brother, my writing, my interest in psychology, my interest in systems and law.</p>
+
+        <p>None of it is separate.</p>
+
+        <p>I used to think I had to choose between logic and emotion, science and writing. But the most honest version of my work exists in the overlap.</p>
+
+        <p>And that’s what my time at the College of Charleston has become.</p>
+
+        <p>Not a straight path—but a layered one.</p>
+
+        <p>I came here expecting to find direction.</p>
+
+        <p>Instead, I found a way of thinking.</p>
+
+        <p>One that understands that nothing exists in isolation.</p>
+
+        <p>And neither do I.</p>
+
+      </div>
     </div>
   </div>
 </body>
